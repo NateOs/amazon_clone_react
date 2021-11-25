@@ -2,8 +2,11 @@ import React from "react";
 import "./checkout.css";
 import Header from "./Header";
 import Subtotal from "./Subtotal";
+import CheckoutProduct from "./CheckoutProduct";
+import { useStateValue } from "./StateProvider";
 
 export default function Checkout() {
+  const [state, dispatch] = useStateValue();
   return (
     <>
       <Header />
@@ -16,6 +19,14 @@ export default function Checkout() {
           />
           <div>
             <h2 className="checkout__title">Your shopping basket</h2>
+            {state?.basket?.map((item) => (
+              <CheckoutProduct
+                price={item.price}
+                title={item.title}
+                rating={item.rating}
+                image={item.image}
+              />
+            ))}
           </div>
         </div>
         <div className="checkout__right">
