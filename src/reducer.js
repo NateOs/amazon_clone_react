@@ -2,6 +2,11 @@ export const initialState = {
   basket: [],
 };
 
+// selector
+export const subtotal = (cartArray) => {
+  return cartArray.reduce((acc, curr) => acc + curr.price, 0);
+};
+
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
