@@ -10,6 +10,7 @@ export default function Header() {
 
   return (
     <div className="header">
+      {/* goes to / */}
       <Link to="/">
         <img
           className="header__logo"
@@ -23,10 +24,13 @@ export default function Header() {
         <SearchIcon className="header__SearchIcon" />
       </div>
       <div className="header__nav">
-        <div className="header__option">
-          <span className="header__optionLineOne">Hello Guest</span>
-          <span className="header__optionLineTwo">Sign in</span>
-        </div>
+        <Link to="/login">
+          <div className="header__option">
+            <span className="header__optionLineOne">Hello Guest</span>
+            <span className="header__optionLineTwo">Sign in</span>
+          </div>
+        </Link>
+
         <div className="header__option">
           <span className="header__optionLineOne">Returns</span>
           <span className="header__optionLineTwo">& Orders</span>
